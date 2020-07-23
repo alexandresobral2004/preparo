@@ -66,7 +66,7 @@ ROOT_URLCONF = 'preparo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,8 +87,11 @@ WSGI_APPLICATION = 'preparo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'preparo',
+        'USER':'postgres',
+        'PASSWORD':'123',
+        'HOST':'localhost'
     }
 }
 
@@ -115,9 +118,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Fortaleza'
 
 USE_I18N = True
 
@@ -130,3 +133,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+
+MEDIA_URL = '/media/' 
+STATIC_ROOT = os.path.join(BASE_DIR,'media')
+
+
+STATIC_FILES_DIRS = [
+
+    os.path.join(BASE_DIR,'staticfiles')
+
+]
