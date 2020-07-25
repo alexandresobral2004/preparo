@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 APPS_DIR = os.path.join(BASE_DIR,'apps')
 sys.path.insert(0,APPS_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
@@ -47,6 +48,7 @@ THIRD_APPS = []
 
 PROJECT_APPS = [
     'cadastro.apps.CadastroConfig',
+    'widget_tweaks',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_APPS
@@ -133,7 +135,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
 MEDIA_URL = '/media/' 
@@ -142,6 +144,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,'media')
 
 STATIC_FILES_DIRS = [
 
-    os.path.join(BASE_DIR,'staticfiles')
+    os.path.join(BASE_DIR,'static')
 
 ]

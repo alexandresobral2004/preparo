@@ -9,11 +9,10 @@ class Preparo(models.Model):
     dirigente = models.CharField('M.Dirigente',max_length=100)
     assistente = models.CharField('M.Assistente',max_length=100)
     total_mariri = models.DecimalField('Total mariri',decimal_places=1,max_digits=5)
-    total_chacrona = models.DecimalField('Total mariri',decimal_places=1,max_digits=5)
-    mariri_panela = models.DecimalField('Total mariri',decimal_places=1,max_digits=5)
-    chacrona_panela = models.DecimalField('Total mariri',decimal_places=1,max_digits=5)
+    total_chacrona = models.DecimalField('Total chacronai',decimal_places=1,max_digits=5)
+    mariri_panela = models.DecimalField('Mariri/Panela',decimal_places=1,max_digits=5)
+    chacrona_panela = models.DecimalField('Cacrona/Panela',decimal_places=1,max_digits=5)
     observacoes = models.TextField('Observações',max_length=250,blank=True)
-    
     usuario = models.ForeignKey(User,on_delete=models.CASCADE)
     
     class Meta:

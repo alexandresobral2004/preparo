@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+from django.contrib.auth.models import User
+
 
 # Create your views here.
-def teste(request):
-    print("")
+def home(request):
+    template_name = 'index.html'
+    return render(request, template_name,{})
