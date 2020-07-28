@@ -5,16 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+      
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- TEMPUS DOMINUS-->
+    {# Include FontAwesome; required for icon display #}
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+
+ 
+    <!-- END TEMPUS DOMINUS-->
+  
+    
     <title>{% block title %} TodoApp {% endblock title %}</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">TodoApp</a>
+    <a class="navbar-brand" href="/">SIGEP</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,17 +34,14 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
           <div class="dropdown-menu" aria-labelledby="dropdown07">
-            <a class="dropdown-item" href="#">Adicionar categoria</a>
-            <a class="dropdown-item" href="#">Listar categorias</a>
+            <a class="dropdown-item" href="{% url 'cadastro:novo_preparo' %}">Novo Preparo</a>
+            <a class="dropdown-item" href="{% url 'cadastro:lista_preparo' %}">Listar Preparos</a>
             <a class="dropdown-item" href="#}">Adicionar tarefa</a>
             <a class="dropdown-item" href="#">Listar tarefas</a>
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-md-0" action="" style="margin-right:10px" autocomplete="off">
-        <input class="form-control" name="query" type="text" placeholder="Digite o termo da busca" aria-label="Search" style="margin-right:10px">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
+      
      
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -60,7 +67,7 @@
 
     
     {% endblock body %}
-
+   
     <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/select2.min.js' %}"></script>
@@ -87,6 +94,14 @@
         $(document).ready(function() {
           $('#id_category').select2();
         });
+
+        
+
+         
+           
+        
+      
+            
   </script>
 </body>
 </html>

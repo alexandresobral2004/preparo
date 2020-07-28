@@ -44,11 +44,12 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_APPS = [] 
+THIRD_APPS = [ 'widget_tweaks','crispy_forms', 'bootstrap_datepicker_plus'] 
 
 PROJECT_APPS = [
+    'core.apps.CoreConfig',
     'cadastro.apps.CadastroConfig',
-    'widget_tweaks',
+   
 ]
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_APPS
@@ -130,10 +131,19 @@ USE_L10N = True
 
 USE_TZ = True
 
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+#SEARCH STATIC FILES IN WEB
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
@@ -142,8 +152,13 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR,'media')
 
 
-STATIC_FILES_DIRS = [
 
-    os.path.join(BASE_DIR,'static')
+#SEARCH STATIC FILES IN APP CREATION
+STATICFILES_DIRS = [
+
+    os.path.join(BASE_DIR,'static'),
 
 ]
+BOOTSTRAP4 = {
+    'include_jquery': True,
+}

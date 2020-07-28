@@ -16,11 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .import views
-from cadastro.views import PreparoListView
 
-app_name = 'cadastro'
+app_name = 'core'
+
 urlpatterns = [
-    path('preparo/adicionar', views.NovoPreparo,name='novo_preparo'),
-    path('praparos/', PreparoListView.as_view(),name='lista_preparo'),
+    path('', views.home,name='home'),
    
 ]

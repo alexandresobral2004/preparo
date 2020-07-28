@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Novo Preparo - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{form.media}}
+<div class="container">
+    <h2>Novo Preparo</h2>
+    {% include 'partials/messages.html' %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-group col-md-5">
+                    <label for="{{ form.data_inicio.id_for_label }}">Data de Início:</label>
+                    {{form.data_inicio |add_class:"form-control"  }}
+                     
+                </div>
+                
+                
+                <div class="form-group col-md-5">
+                    <label for="{{ form.dirigente.id_for_label }}">M. Dirigente</label>
+                    {{form.dirigente |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-5">
+                    <label for="{{ form.assistente.id_for_label }}">M. Assistente:</label>
+                    {{form.assistente |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.total_mariri.id_for_label }}">Total mariri:</label>
+                    {{form.total_mariri |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.total_chacrona.id_for_label }}">Total Chacrona:</label>
+                    {{form.total_chacrona |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.mariri_panela.id_for_label }}">Mariri/Panela:</label>
+                    {{form.mariri_panela |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.chacrona_panela.id_for_label }}">Chacrona/Panela:</label>
+                    {{form.chacrona_panela |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-6">
+                    <label for="{{ form.observacoes.id_for_label }}">Observações:</label>
+                    {{form.observacoes |add_class:"form-control"  }}
+                     
+                </div> 
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
