@@ -21,6 +21,7 @@ from cadastro.views import PreparoListView
 app_name = 'cadastro'
 urlpatterns = [
     path('preparo/adicionar', views.NovoPreparo,name='novo_preparo'),
-    path('praparos/', PreparoListView.as_view(),name='lista_preparo'),
+    path('preparos/', PreparoListView.as_view(),name='lista_preparo'),
+    path('preparos/', PreparoListView.as_view(),name='lista_preparo'),
    
 ]

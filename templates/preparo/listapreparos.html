@@ -20,6 +20,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Data</th>
                     <th scope="col">Dirigente</th>
+                    <th scope="col">Assistente</th>
                     
                 </tr>
             </thead>
@@ -29,9 +30,10 @@
                     <th scope="row">{{ object.id }}</th>
                     <td>{{ object.data_inicio }}</td>
                     <td>{{ object.dirigente }}</td>
+                    <td>{{ object.assistente }}</td>
                     
                 </tr>
-            {% endfor %}
+                {% endfor %}
             </tbody>
         </div>
     </div>

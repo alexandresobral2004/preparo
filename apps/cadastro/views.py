@@ -35,6 +35,21 @@ def NovoPreparo(request):
     return render(request, template_name, context)
 
 
+def NovaTachada(request):
+    template_name = 'preparo/novaTachada.html'
+    context = {}
+    if request.method == 'POST':
+        form = PreparoForm(request.POST)
+        if form.is_valid():
+            f = form.save(commit=False)
+            f.preparo = form.
+            f.save()
+            messages.success(request, 'Dados gravados com sucesso')
+    form = PreparoForm()
+    context['form'] = form
+    return render(request, template_name, context)
+
+
 
 
 

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+    Novo Preparo - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+{{form.media}}
+<div class="container">
+    <h2>Novo Preparo</h2>
+    {% include 'partials/messages.html' %}
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" method="post" autocomplete="off">
+                {% csrf_token %}
+
+              
+                <div class="form-group col-md-5">
+                    <label for="{{ form.total_mariri.id_for_label }}">Num. Tachada</label>
+                    {{form.num_tachada |add_class:"form-control"  }}
+                     
+                </div>
+                <div class="form-group col-md-5">
+                    <label for="{{ form.total_mariri.id_for_label }}">Total Mariri</label>
+                    {{form.total_mariri |add_class:"form-control"  }}
+                     
+                </div>
+                
+                <div class="form-group col-md-5">
+                    <label for="{{ form.total_chacrona_for_label }}">Total chacrona</label>
+                    {{form.total_chacrona |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-5">
+                    <label for="{{ form.qtde_panelas.id_for_label }}">Num. Panelas:</label>
+                    {{form.qtde_panelas |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.hora_entrada.id_for_label }}">Hora Entrada</label>
+                    {{form.hora_entrada |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.hora_fervura.id_for_label }}">Hora fervura</label>
+                    {{form.total_chacrona |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.hora_saida.id_for_label }}">Hora saída</label>
+                    {{form.hora_saida |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.agua_panela.id_for_label }}">Água/panela:</label>
+                    {{form.agua_panela |add_class:"form-control"  }}
+                     
+                </div> 
+                
+                <div class="form-group col-md-2">
+                    <label for="{{ form.litros_vegetal.id_for_label }}">Vegetal(Lts):</label>
+                    {{form.litros_vegetal |add_class:"form-control"  }}
+                     
+                </div> 
+               
+                <div class="form-group col-md-2">
+                    <label for="{{ form.litros_vegetal.id_for_label }}">Tipo Tachada:</label>
+                    {{form.litros_vegetal |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-2">
+                    <label for="{{ form.preparo.id_for_label }}">Dirigente:</label>
+                    {{form.preparo |add_class:"form-control"  }}
+                     
+                </div> 
+                <div class="form-group col-md-6">
+                    <label for="{{ form.observacoes.id_for_label }}">Observações:</label>
+                    {{form.observacoes |add_class:"form-control"  }}
+                     
+                </div> 
+                <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

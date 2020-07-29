@@ -159,6 +159,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static'),
 
 ]
+
+#DATEPICKER PLUS
+# Use BOOTSTRAP3 if you are using Bootstrap 3
 BOOTSTRAP4 = {
     'include_jquery': True,
 }
