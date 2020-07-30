@@ -16,12 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .import views
-from cadastro.views import PreparoListView
+from cadastro.views import PreparoListView,TachadaListView
 
 app_name = 'cadastro'
 urlpatterns = [
     path('preparo/adicionar', views.NovoPreparo,name='novo_preparo'),
+    path('tachadas/add_tachada', views.NovaTachada,name='nova_tachada'),
     path('preparos/', PreparoListView.as_view(),name='lista_preparo'),
-    path('preparos/add_tachada', views.NovaTachada,name='nova_tachada'),
+    path('tachadas/', TachadaListView.as_view(),name='lista_tachada'),
+    path('edita/<int:id_tachada>/', views.edit_tachada,name='edita_tachada'),
+    path('delete/<int:id_tachada>/', views.delete_tachada,name='delete_tachada'),
    
 ]

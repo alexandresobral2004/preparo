@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+{% block title %}
+
+   Lista de Tachadas - {{ block.super }}
+
+{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <h1>Lista de Tachadas</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Entrada</th>
+                    <th scope="col">Fervura</th>
+                    <th scope="col">Saída</th>
+                    <th scope="col">Lts</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for tachada in tachadas %}
+                <tr>
+                    <td scope="row">{{ tachada.num_tachada }}</td>
+                    <td scope="row">{{ tachada.tipo }}</td>
+                    <td scope="row">{{ tachada.hora_entrada }}</td>
+                    <td scope="row">{{ tachada.hora_fervura }}</td>
+                    <td scope="row">{{ tachada.hora_saida }}</td>
+                    <td scope="row">{{ tachada.litros_vegetal }}</td>
+                    <td>
+                        <a href="{% url 'cadastro:edita_tachada' tachada.id %}" class="btn btn-primary btn-sm">Editar</a>
+                        <a href="{% url 'cadastro:delete_tachada' tachada.id %}" class="btn btn-danger btn-sm confirm-delete" data-toggle="modal", data-target="#confirmDeleteModal" id="deleteButton-{{ tachada.id }}">Excluir</a>
+                    </td>
+                    
+                    
+                </tr>
+                {% endfor %}
+            </tbody>
+        </div>
+    </div>
+    {% include 'partials/confirm_delete_modal.html' %}
+</div>
+
+{% endblock%}

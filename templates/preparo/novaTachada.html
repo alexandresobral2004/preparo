@@ -11,7 +11,7 @@
 {% block body %}
 {{form.media}}
 <div class="container">
-    <h2>Novo Preparo</h2>
+    <h2>Nova Tachada</h2>
     {% include 'partials/messages.html' %}
     <div class="row">
         <div class="col-md-12">
@@ -21,24 +21,24 @@
               
                 <div class="form-group col-md-5">
                     <label for="{{ form.total_mariri.id_for_label }}">Num. Tachada</label>
-                    {{form.num_tachada |add_class:"form-control"  }}
+                    {{form.num_tachada |add_class:"form-control" |attr:"readonly" }}
                      
                 </div>
                 <div class="form-group col-md-5">
                     <label for="{{ form.total_mariri.id_for_label }}">Total Mariri</label>
-                    {{form.total_mariri |add_class:"form-control"  }}
+                    {{form.total_mariri |add_class:"form-control"   |attr:"readonly"}}
                      
                 </div>
                 
                 <div class="form-group col-md-5">
                     <label for="{{ form.total_chacrona_for_label }}">Total chacrona</label>
-                    {{form.total_chacrona |add_class:"form-control"  }}
+                    {{form.total_chacrona |add_class:"form-control"  |attr:"readonly" }}
                      
                 </div> 
                  
                 <div class="form-group col-md-5">
                     <label for="{{ form.mariri_panela_for_label }}">Mariri/panela</label>
-                    {{form.mariri_panela |add_class:"form-control"  }}
+                    {{form.mariri_panela |add_class:"form-control" }}
                      
                 </div> 
                  
@@ -49,12 +49,12 @@
                 </div> 
                 <div class="form-group col-md-5">
                     <label for="{{ form.qtde_panelas.id_for_label }}">Num. Panelas:</label>
-                    {{form.qtde_panelas |add_class:"form-control"  }}
+                    {{form.qtde_panelas |add_class:"form-control"  |attr:"required" }}
                      
                 </div> 
                 <div class="form-group col-md-2">
                     <label for="{{ form.hora_entrada.id_for_label }}">Hora Entrada</label>
-                    {{form.hora_entrada |add_class:"form-control"  }}
+                    {{form.hora_entrada |add_class:"form-control"  |attr:"required" }}
                      
                 </div> 
                 <div class="form-group col-md-2">
@@ -81,12 +81,12 @@
                
                 <div class="form-group col-md-2">
                     <label for="{{ form.tipo.id_for_label }}">Tipo Tachada:</label>
-                    {{form.tipo |add_class:"form-control"  }}
+                    {{form.tipo |add_class:"form-control" |attr:"required"   }}
                      
                 </div> 
                 <div class="form-group col-md-2">
                     <label for="{{ form.preparo.id_for_label }}">Dirigente:</label>
-                    {{form.preparo |add_class:"form-control"  }}
+                    {{form.preparo |add_class:"form-control" |attr:"required"  }}
                      
                 </div> 
                 <div class="form-group col-md-6">
