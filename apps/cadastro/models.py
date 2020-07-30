@@ -58,5 +58,5 @@ class Tachada(models.Model):
         ordering = ['id']
      
     def __str__(self):
-        return self.hora_entrada
+        return str(self.hora_entrada)
 
