@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Preparo,Tachada
+from .models import Preparo,Tachada,tipo_tachada
 # Register your models here.
 
 class PreparoAdmin(admin.ModelAdmin):
@@ -17,3 +17,9 @@ class TachadaAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Tachada,TachadaAdmin)
+
+class TipoTachadaAdmin(admin.ModelAdmin):
+    list_display = ['tipo' ]
+    list_filter = ['tipo']
+
+admin.site.register(tipo_tachada,TipoTachadaAdmin)

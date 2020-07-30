@@ -39,6 +39,8 @@ class tipo_tachada(models.Model):
 class Tachada(models.Model):
     total_mariri = models.DecimalField('Total Mariri',decimal_places=1,max_digits=5,null=True)
     total_chacrona = models.DecimalField('Total Chacrona',decimal_places=1,max_digits=5,null=True)
+    mariri_panela = models.DecimalField('Mariri/Panela',decimal_places=1,max_digits=5,null=True)
+    chacrona_panela = models.DecimalField('Chacrona/Panela',decimal_places=1,max_digits=5,null=True)
     num_tachada = models.IntegerField('Num. Tachada',blank=False)
     qtde_panelas = models.IntegerField('Num. Panelas',blank=False)
     hora_entrada = models.TimeField('Hora Entrada',auto_now=False, auto_now_add=False,blank=False)

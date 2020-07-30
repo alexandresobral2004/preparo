@@ -42,10 +42,9 @@ def NovaTachada(request):
         form = PreparoForm(request.POST)
         if form.is_valid():
             f = form.save(commit=False)
-            f.preparo = form.
             f.save()
             messages.success(request, 'Dados gravados com sucesso')
-    form = PreparoForm()
+    form = TachadaForm
     context['form'] = form
     return render(request, template_name, context)
 

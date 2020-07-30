@@ -15,5 +15,5 @@ class TachadaForm(forms.ModelForm):
 
     class Meta:
         model = Tachada
-        exclude = ('preparo',) 
+        fields = '__all__'
         
